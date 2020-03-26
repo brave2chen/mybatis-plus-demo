@@ -75,6 +75,7 @@ public class CodeGenerator {
         strategy.setFieldPrefix();
         strategy.setSuperEntityClass(DataEntity.class.getName());
         strategy.setSuperEntityColumns("create_time,update_time,create_user,update_user".split(","));
+//        strategy.setLogicDeleteFieldName("is_deleted");
         strategy.setSuperMapperClass(BaseMapper.class.getName());
         strategy.setSuperServiceClass(null);
         strategy.setSuperServiceImplClass(ServiceImpl.class.getName());

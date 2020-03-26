@@ -31,3 +31,8 @@ CREATE TABLE `user`
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
   DEFAULT CHARSET = utf8mb4 COMMENT ='用户';
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('1', 'admin', '管理员', '13234567890', '123456', '1', '0', '0', '0', '0', '2020-03-25 17:01:17', '2020-03-25 17:01:19', '2020-03-25 17:01:21', '0', '0');
