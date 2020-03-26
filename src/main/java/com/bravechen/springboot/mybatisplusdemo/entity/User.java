@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -56,44 +55,43 @@ public class User extends DataEntity<User> {
      * 用户密码
      */
     @TableField("password")
-    @JsonIgnore
     private String password;
 
     /**
      * 是否启用
      */
     @TableField("is_enabled")
-    private Boolean enabled;
+    private Boolean enabled = true;
 
     /**
      * 是否锁定
      */
     @TableField("is_locked")
-    private Boolean locked;
+    private Boolean locked = false;
 
     /**
      * 是否过期
      */
     @TableField("is_expired")
-    private Boolean expired;
+    private Boolean expired = false;
 
     /**
      * 密码是否过期
      */
     @TableField("is_password_expired")
-    private Boolean passwordExpired;
+    private Boolean passwordExpired = false;
 
     /**
      * 是否删除
      */
     @TableField("is_deleted")
-    private Boolean deleted;
+    private Boolean deleted = false;
 
     /**
      * 密码更新时间
      */
     @TableField("password_update_time")
-    private LocalDateTime passwordUpdateTime;
+    private LocalDateTime passwordUpdateTime = LocalDateTime.now();
 
     public static final String ID = "id";
 

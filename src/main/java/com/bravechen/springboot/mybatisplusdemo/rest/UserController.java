@@ -1,12 +1,10 @@
 package com.bravechen.springboot.mybatisplusdemo.rest;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bravechen.springboot.mybatisplusdemo.entity.User;
 import com.bravechen.springboot.mybatisplusdemo.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -26,7 +24,29 @@ public class UserController extends BaseController {
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id) {
+    public User get(@PathVariable long id) {
         return userService.getById(id);
+    }
+
+    @PostMapping("")
+    public boolean save(@RequestBody User user) {
+        return userService.save(user);
+    }
+
+    @PutMapping("/{id}")
+    public boolean update(@PathVariable long id, @RequestBody User user) {
+        user.setId(id);
+        return userService.updateById(user);
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean delete(@PathVariable long id) {
+        return userService.removeById(id);
+    }
+
+
+    @GetMapping("/page")
+    public Page<User> page(@RequestParam(defaultValue = "1") int currentPage, @RequestParam(defaultValue = "10") int pageSize) {
+        return userService.page(new Page<>(currentPage, pageSize));
     }
 }
