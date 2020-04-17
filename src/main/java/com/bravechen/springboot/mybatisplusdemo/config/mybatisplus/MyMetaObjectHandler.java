@@ -1,4 +1,4 @@
-package com.bravechen.springboot.mybatisplusdemo.config;
+package com.bravechen.springboot.mybatisplusdemo.config.mybatisplus;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;

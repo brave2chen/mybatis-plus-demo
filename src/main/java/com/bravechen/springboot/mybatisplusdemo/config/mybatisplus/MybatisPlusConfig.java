@@ -1,4 +1,4 @@
-package com.bravechen.springboot.mybatisplusdemo.config;
+package com.bravechen.springboot.mybatisplusdemo.config.mybatisplus;
 
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
